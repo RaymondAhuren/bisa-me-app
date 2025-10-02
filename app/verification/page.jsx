@@ -72,7 +72,7 @@ export default function VerifyAccount() {
 
         // Save token for authenticated session
         localStorage.setItem("authToken", res.data.token);
-        saveToken(res.data.token);
+       
       } else {
         const errorMessage =
           res.message?.message || res.message || "Verification failed";
