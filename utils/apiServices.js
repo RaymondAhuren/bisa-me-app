@@ -29,7 +29,7 @@ export async function createAccount(userData) {
 }
 
 // utils/apiServices.js
-export async function verifyToken(otp, saveToken) {
+export async function verifyToken(otp) {
   if (typeof otp !== "string") {
     throw new Error("OTP must be a string");
   }
@@ -46,7 +46,7 @@ export async function verifyToken(otp, saveToken) {
   });
 
   const data = await response.json();
-  console.log("verifyToken response:", data);
+
 
   if (!response.ok) {
     throw new Error(data.message || "Failed to verify OTP");

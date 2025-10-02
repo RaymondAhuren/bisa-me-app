@@ -19,14 +19,10 @@ export async function POST(request) {
 
     const headers = {
       "Content-Type": "application/json",
-      Authorization: `Bearer ${token}`, // ✅ use token properly
+      Authorization: `Bearer ${token}`, // use token properly
     };
 
     const body = { verificationCode };
-
-    console.log("Sending headers:", headers);
-    console.log("Sending body:", body);
-
     const res = await fetch(
       `${process.env.NEXT_PUBLIC_API_URL}/authentication/verify-otp`,
       {
@@ -37,7 +33,7 @@ export async function POST(request) {
     );
 
     const data = await res.json();
-    console.log("Backend response:", res.status, data);
+  
 
     return new Response(JSON.stringify(data), {
       status: res.ok ? 200 : res.status,

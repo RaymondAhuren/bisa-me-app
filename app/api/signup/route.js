@@ -14,7 +14,6 @@ export async function POST(request) {
     );
 
     const data = await res.json();
-console.log(data)
     return new Response(JSON.stringify(data), {
       status: res.ok ? 200 : 400,
       headers: { "Content-Type": "application/json" },

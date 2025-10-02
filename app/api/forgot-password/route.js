@@ -20,7 +20,6 @@ export async function POST(request) {
     );
 
     const data = await res.json();
-    console.log("Forgot Password API response:", data);
 
     return new Response(JSON.stringify(data), {
       status: res.ok ? 200 : res.status,

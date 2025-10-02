@@ -12,7 +12,6 @@ export async function POST(request) {
     );
 
     const data = await res.json();
-    console.log("Login API response:", data);
 
     return new Response(JSON.stringify(data), {
       status: res.ok ? 200 : 400,
